@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+  >
+  <!-- View that adds new professor -->
+
+  <h:head>
+    <!-- Title of tab/window in browser -->
+    <title>#{uiconsts['addButtonLabel']}</title>
+  </h:head>
+  <h:body>
+    <h2>#{uiconsts['addButtonLabel']}</h2>
+    <br/>
+
+
+  <h:form>
+  
+     
+     <h:outputLabel for="lastName" value="Last Name:" />
+    <h:inputText id="lastName" value="#{newProfessor.lastName}" />
+<br/>
+    <h:outputLabel for="firstName" value="First Name:" />
+    <h:inputText id="firstName" value="#{newProfessor.firstName}" />
+<br/>
+    <h:outputLabel for="email" value="Email:" />
+    <h:inputText id="email" value="#{newProfessor.email}" />
+<br/>
+    <h:outputLabel for="phoneNumber" value="Phone Number:" />
+    <h:inputText id="phoneNumber" value="#{newProfessor.phoneNumber}" />
+<br/>
+    <h:outputLabel for="degree" value="Degree:" />
+    <h:selectOneMenu id="degree" value="#{newProfessor.degree}">
+      <f:selectItem itemLabel="Select a degree" itemValue="#{newProfessor.degree}" />
+      <f:selectItem itemLabel="Bachelor of Applied Science" itemValue="Bachelor of Applied Science" />
+    <f:selectItem itemLabel="Bachelor of Arts" itemValue="Bachelor of Arts" />
+    <f:selectItem itemLabel="Bachelor of Education" itemValue="Bachelor of Education" />
+    <f:selectItem itemLabel="Bachelor of Engineering" itemValue="Bachelor of Engineering" />
+    <f:selectItem itemLabel="Bachelor of Fine Arts" itemValue="Bachelor of Fine Arts" />
+    <f:selectItem itemLabel="Bachelor of Liberal Arts and Sciences" itemValue="Bachelor of Liberal Arts and Sciences" />
+    <f:selectItem itemLabel="Bachelor of Library Science" itemValue="Bachelor of Library Science" />
+    <f:selectItem itemLabel="Bachelor of Philosophy" itemValue="Bachelor of Philosophy" />
+    <f:selectItem itemLabel="Bachelor of Professional Studies" itemValue="Bachelor of Professional Studies" />
+    <f:selectItem itemLabel="Bachelor of Science" itemValue="Bachelor of Science" />
+    <f:selectItem itemLabel="Bachelor of Science And Arts" itemValue="Bachelor of Science And Arts" />
+    <f:selectItem itemLabel="Bachelor of Technology" itemValue="Bachelor of Technology" />
+    <f:selectItem itemLabel="Master of Arts" itemValue="Master of Arts" />
+    <f:selectItem itemLabel="Master of Education" itemValue="Master of Education" />
+    <f:selectItem itemLabel="Master of Engineering" itemValue="Master of Engineering" />
+    <f:selectItem itemLabel="Master of Fine Arts" itemValue="Master of Fine Arts" />
+    <f:selectItem itemLabel="Master of Library Science" itemValue="Master of Library Science" />
+    <f:selectItem itemLabel="Master of Liberal Arts" itemValue="Master of Liberal Arts" />
+    <f:selectItem itemLabel="Master of Library and Information Science" itemValue="Master of Library and Information Science" />
+    <f:selectItem itemLabel="Master of Professional Studies" itemValue="Master of Professional Studies" />
+    <f:selectItem itemLabel="Master of Science" itemValue="Master of Science" />
+    <f:selectItem itemLabel="Master of Technology" itemValue="Master of Technology" />
+    <f:selectItem itemLabel="Doctor of Education" itemValue="Doctor of Education" />
+    <f:selectItem itemLabel="Doctor of Engineering" itemValue="Doctor of Engineering" />
+    <f:selectItem itemLabel="Doctor of Jurisprudence (Juris Doctor)" itemValue="Doctor of Jurisprudence (Juris Doctor)" />
+    <f:selectItem itemLabel="Doctor of Medicine" itemValue="Doctor of Medicine" />
+    <f:selectItem itemLabel="Doctor of Philosophy" itemValue="Doctor of Philosophy" />
+    <f:selectItem itemLabel="Doctor of Science" itemValue="Doctor of Science" />
+    </h:selectOneMenu>
+<br/>
+    <h:outputLabel for="major" value="major:" />
+    <h:selectOneMenu id="major" value="#{newProfessor.major}">
+      <f:selectItem itemLabel="Select a major" itemValue="#{professorController.getMajors()}" />
+     
+      <f:selectItem itemLabel="Geology" itemValue="Geology" />
+    </h:selectOneMenu>
+  
+
+<br/>
+    <h:commandButton value="#{uiconsts['addButtonLabel']}" action="#{professorController.submitProfessor(newProfessor)}" />
+       
+  
+</h:form>
+
+    
+  
+    
+     <h:outputLink value="list-professors.xhtml">Back</h:outputLink>
+  </h:body>
+</html>
